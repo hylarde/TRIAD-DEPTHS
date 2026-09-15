@@ -272,8 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eadbeb65572ccc4aa7aa279f1fb1b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 916064267}
+  target: {fileID: 0}
   smoothSpeed: 5
+  offset: {x: 0, y: 0, z: -10}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +370,7 @@ GameObject:
   - component: {fileID: 916064265}
   - component: {fileID: 916064264}
   - component: {fileID: 916064268}
+  - component: {fileID: 916064269}
   m_Layer: 0
   m_Name: personagem
   m_TagString: Untagged
@@ -527,7 +529,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e83c075dac599c94489e7a0a126f7695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+--- !u!114 &916064269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916064263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c62164e0575f994f92428629ae0512f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  dashSpeed: 15
+  dashDuration: 0.2
+  dashCooldown: 1
 --- !u!1 &1577209519
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1577209520
 Rigidbody2D:
   serializedVersion: 4
