@@ -7,18 +7,22 @@ public class perseguir : MonoBehaviour
     public float speed;
     public Transform player;
     public float stoppingDistance;
-
-    // Update is called once per frame
-    private Rigidbody2D rb;
-
+    private VIdaInimigo vidaInimigo;
+    public Rigidbody2D rb;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        vidaInimigo = GetComponent<VIdaInimigo>();
     }
 
     void FixedUpdate()
     {
-        if (player == null)
+        if (player == null || rb == null)
+            return;
+
+        // Se estiver em knockback, não perseguir
+        if (vidaInimigo != null && vidaInimigo.IsKnockedBack)
             return;
 
         float distance = Vector2.Distance(transform.position, player.position);

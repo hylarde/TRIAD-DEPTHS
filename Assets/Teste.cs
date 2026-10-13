@@ -6,7 +6,7 @@ public class Teste : MonoBehaviour
 {
    int vida = 100;
 
-   Void AplaicaDano( int dano) 
+   void AplaicaDano( int dano) 
    {
         vida -= dano; 
         if (vida >= 0)
@@ -27,9 +27,24 @@ public class Teste : MonoBehaviour
 
              AplaicaDano(danoAleatorio);
              
+                Debug.Log("Você sofreu " + danoAleatorio + " de dano! Vida restante: " + vida);
             }
+            else
+            {
+                Debug.Log("O objeto já está sem vida!");
+            }
+            
          }
    }
 
-   
+   public void AplicarDano(int dano)
+    {
+        vida -= dano;
+
+       
+        if (vida < 0)
+        {
+            vida = 0;
+        }
+    }
 }
