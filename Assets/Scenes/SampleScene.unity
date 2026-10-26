@@ -589,6 +589,7 @@ GameObject:
   - component: {fileID: 916064268}
   - component: {fileID: 916064269}
   - component: {fileID: 916064270}
+  - component: {fileID: 916064271}
   m_Layer: 7
   m_Name: personagem
   m_TagString: Player
@@ -632,7 +633,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -709,7 +710,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bb2058359f0fe5a44803bd58d9ce877d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -729,9 +730,9 @@ Transform:
   m_GameObject: {fileID: 916064263}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.54, y: -3.94, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 2.89, y: -1.15, z: 0}
+  m_LocalScale: {x: 0.72, y: 0.72, z: 0.72}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 511062811}
   - {fileID: 2015180553}
@@ -762,7 +763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  dashSpeed: 9
+  dashSpeed: 15
   dashDuration: 0.2
   dashCooldown: 1
 --- !u!114 &916064270
@@ -777,6 +778,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8faed2c369b0534aa6c34eefcb1e111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &916064271
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916064263}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3fe31c4708257594295cfab0c2c01c4c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1331996350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,11 +1324,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468777437096379146, guid: a5a3f027697c59247b06fec8b778f0e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.44
+      value: -0.64
       objectReference: {fileID: 0}
     - target: {fileID: 5468777437096379146, guid: a5a3f027697c59247b06fec8b778f0e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.77
+      value: 4.64
       objectReference: {fileID: 0}
     - target: {fileID: 5468777437096379146, guid: a5a3f027697c59247b06fec8b778f0e1, type: 3}
       propertyPath: m_LocalPosition.z

@@ -7,6 +7,7 @@ public class MovimentoJogador : MonoBehaviour {
     public float moveSpeed = 5f;
 private Vector2 movement;
 private Rigidbody2D rb;
+private Animator animator;
 
 [Header("Dash")]
 public float dashSpeed = 15f;
@@ -20,8 +21,9 @@ private float lastDashTime = -100f;
 void Start()
 {
     rb = GetComponent<Rigidbody2D>();
+    animator = GetComponent<Animator>();
 
-    // Configurações padrão para top-down 2D
+    // Configuraes padro para top-down 2D
     rb.gravityScale = 0f;
     rb.freezeRotation = true;
 }
@@ -34,14 +36,15 @@ void Update()
     // Recebe os comandos (1, -1 ou 0)
     movement.x = Input.GetAxisRaw("Horizontal");
     movement.y = Input.GetAxisRaw("Vertical");
-
-    // Normaliza o vetor para que ele não ande mais rápido nas diagonais
+    animator.SetFloat("velocidadeX", movement.x);
+    animator.SetFloat("velocidadeY", movement.y);
+    // Normaliza o vetor para que ele no ande mais rpido nas diagonais
     movement = movement.normalized;
 
-    // Comando para o Dash (Tecla de Espaço)
+    // Comando para o Dash (Tecla de Espao)
     if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= lastDashTime + dashCooldown)
     {
-        if (movement != Vector2.zero) // Só dá dash se tiver uma direção escolhida
+        if (movement != Vector2.zero) // Sï¿½ dï¿½ dash se tiver uma direï¿½ï¿½o escolhida
         {
             StartDash();
         }
