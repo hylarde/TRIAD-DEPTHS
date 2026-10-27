@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float tempoataquedecorrido = 0f;
+    public float ataqueDuracao = 0.5f;
+    private Animator animator;
+
     void Start()
     {
         
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        tempoataquedecorrido -= Time.deltaTime;
         
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (tempoataquedecorrido <= 0)
+            {
+                Atacar();
+                tempoataquedecorrido = ataqueDuracao;
+            }
+        }
+    }
+
+    void Atacar()
+    {
+        
+        animator.SetTrigger("ataque");
     }
 }
+
+
+
+
