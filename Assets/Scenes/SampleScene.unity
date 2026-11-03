@@ -816,7 +816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &796592001
 Transform:
   m_ObjectHideFlags: 0
@@ -1003,6 +1003,7 @@ GameObject:
   - component: {fileID: 916064271}
   - component: {fileID: 916064272}
   - component: {fileID: 916064273}
+  - component: {fileID: 916064274}
   m_Layer: 7
   m_Name: personagem
   m_TagString: Player
@@ -1249,6 +1250,23 @@ MonoBehaviour:
   - {fileID: 2086111657}
   coracaoCheio: {fileID: 21300000, guid: dea18eda1f9b15c4d9a037e27291b635, type: 3}
   coracaoVazio: {fileID: 21300000, guid: 8b22c671f33213c47a98edcb575c8123, type: 3}
+--- !u!114 &916064274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916064263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a691d6388550bb44a4a3ac921c2d6f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 0
+  vidaAtual: 0
+  coracoes: []
+  coracaoCheio: {fileID: 0}
+  coracaoVazio: {fileID: 0}
 --- !u!1 &1281875547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,6 +1840,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5468777437096379146, guid: a5a3f027697c59247b06fec8b778f0e1, type: 3}
   m_PrefabInstance: {fileID: 3833908985181471912}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1626563657 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4694590377770714986, guid: a5a3f027697c59247b06fec8b778f0e1, type: 3}
+  m_PrefabInstance: {fileID: 3833908985181471912}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1626563662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626563657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51abae72950f14341bdab250d2d511a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heart: {fileID: 916064273}
 --- !u!1 &2015180552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,7 +2155,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4694590377770714986, guid: a5a3f027697c59247b06fec8b778f0e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1626563662}
   m_SourcePrefab: {fileID: 100100000, guid: a5a3f027697c59247b06fec8b778f0e1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
