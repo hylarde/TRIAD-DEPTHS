@@ -36,8 +36,13 @@ void Update()
     // Recebe os comandos (1, -1 ou 0)
     movement.x = Input.GetAxisRaw("Horizontal");
     movement.y = Input.GetAxisRaw("Vertical");
-    animator.SetFloat("velocidadeX", movement.x);
+    animator.SetFloat("velocidadeX",Mathf.Abs(movement.x));
     animator.SetFloat("velocidadeY", movement.y);
+    if(movement.x != 0)
+    {
+        GetComponent<SpriteRenderer>().flipX= movement.x > 0;
+    }
+    
     // Normaliza o vetor para que ele no ande mais rpido nas diagonais
     movement = movement.normalized;
 
