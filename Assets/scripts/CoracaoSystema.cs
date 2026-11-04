@@ -10,10 +10,12 @@ public class CoracaoSystema : MonoBehaviour
    public Image[] coracoes;
    public Sprite coracaoCheio;
     public Sprite coracaoVazio;
+    private bool morto;
 
     void Update()
     {
         CoracaoLogica();
+        EstadoMorto();
     }
     
     void CoracaoLogica()
@@ -23,9 +25,12 @@ public class CoracaoSystema : MonoBehaviour
         {
             vidaAtual = vidaMaxima;
         }
+        if(vidaAtual < 0)
+        {
+            vidaAtual = 0;
+        }
         for(int i = 0; i < coracoes.Length; i++)
         {
-
             if(i <vidaAtual)
             {
                 coracoes[i].sprite = coracaoCheio;
@@ -42,6 +47,29 @@ public class CoracaoSystema : MonoBehaviour
             {
                 coracoes[i].enabled = false;
             }
+        }
+
     }
+void EstadoMorto(){
+    if(vidaAtual <= 0 && !morto)
+    {
+       morto = true;
+       vidaAtual = 0;
+
+       MovimentoJogador movimento = GetComponent<MovimentoJogador>();
+       if(movimento != null)
+       {
+           movimento.enabled = false;
+       }
+
+       Rigidbody2D corpo = GetComponent<Rigidbody2D>();
+       if(corpo != null)
+       {
+           corpo.velocity = Vector2.zero;
+       }
+
+       Destroy(gameObject, 0.5f);
     }
+}
+
 }
