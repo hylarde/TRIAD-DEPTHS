@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class CoracaoSystema : MonoBehaviour
 {
@@ -68,8 +68,15 @@ void EstadoMorto(){
            corpo.velocity = Vector2.zero;
        }
 
-       Destroy(gameObject, 0.5f);
+       StartCoroutine(ReiniciarCena());
     }
+}
+
+private IEnumerator ReiniciarCena()
+{
+    yield return new WaitForSecondsRealtime(0.5f);
+    Time.timeScale = 1f;
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 }
 
 }
