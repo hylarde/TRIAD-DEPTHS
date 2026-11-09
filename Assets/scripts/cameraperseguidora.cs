@@ -14,10 +14,10 @@ public class cameraperseguidora : MonoBehaviour
 
         Vector3 targetPosition = player.position;
 
-        // Mantém a câmera na mesma posição Z
+        
         targetPosition.z = transform.position.z;
 
-        // Movimento suave
+        
         transform.position = Vector3.Lerp(
             transform.position,
             targetPosition,
