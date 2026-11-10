@@ -52,23 +52,12 @@ public class VIdaInimigo : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage, Vector2 hitPoint, Vector2 knockback)
+    public void TakeDamage()
     {
-        if (!IsAlive)
-            return;
-        if (damage <= 0)
-            return;
-
-        if (isInvulnerable)
-            return;
-
-        currentHealth = Mathf.Max(0, currentHealth - damage);
-
-        if (body != null && knockback.sqrMagnitude > 0.001f)
+        this.maxHealth -= 1;
+        if (this.maxHealth <= 0)
         {
-            knockbackVelocity = knockback;
-            knockbackTimer = knockbackDuration;
-            isInvulnerable = true;
+            Die();
         }
     }
 

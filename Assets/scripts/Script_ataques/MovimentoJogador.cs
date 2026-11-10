@@ -18,9 +18,12 @@ private bool isDashing;
 private float dashTimeLeft;
 private float lastDashTime = -100f;
 
-void Start()
+    public direcaomovimento direcaoMovimento;
+
+    void Start()
 {
-    rb = GetComponent<Rigidbody2D>();
+        this.direcaoMovimento = direcaomovimento.esquerda;
+        rb = GetComponent<Rigidbody2D>();
     animator = GetComponent<Animator>();
 
     // Configuraes padro para top-down 2D
@@ -38,13 +41,23 @@ void Update()
     movement.y = Input.GetAxisRaw("Vertical");
     animator.SetFloat("velocidadeX",Mathf.Abs(movement.x));
     animator.SetFloat("velocidadeY", movement.y);
-    if(movement.x != 0)
+        Vector2 direcao = new Vector2(movement.x, movement.y);
+        direcao = direcao.normalized;
+        if (movement.x != 0)
     {
         GetComponent<SpriteRenderer>().flipX= movement.x > 0;
     }
-    
-    // Normaliza o vetor para que ele no ande mais rpido nas diagonais
-    movement = movement.normalized;
+
+        if (direcao.x > 0)
+        {
+            this.direcaoMovimento = direcaomovimento.direita;
+        } else if (direcao.x < 0)
+        {
+            this.direcaoMovimento = direcaomovimento.esquerda;
+        }
+
+        // Normaliza o vetor para que ele no ande mais rpido nas diagonais
+        movement = movement.normalized;
 
     // Comando para o Dash (Tecla de Espao)
     if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= lastDashTime + dashCooldown)
