@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using System;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -47,10 +49,11 @@ public class PlayerAttack : MonoBehaviour
         Collider2D colliderinimigo = Physics2D.OverlapCircle(pontodeataque.position, this.raioataque);
         if (colliderinimigo != null)
         {
-            Debug.Log("Inimigo atingido: ");
             VIdaInimigo inimigo = colliderinimigo.GetComponent<VIdaInimigo>();
+
             if (inimigo != null)
             {
+                print("Inimigo atingido");
                 inimigo.TakeDamage();
             }
         }

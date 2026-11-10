@@ -1892,6 +1892,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 796592001}
+  - component: {fileID: 796592002}
   m_Layer: 6
   m_Name: Inimigos
   m_TagString: Untagged
@@ -1915,6 +1916,33 @@ Transform:
   - {fileID: 1577209523}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &796592002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796592000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727e80cd42e0bf446aa6f9c4c1a98fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jogador: {fileID: 916064267}
+  prefabInimigo: {fileID: 1230000000000000000, guid: fc8dd00dfa214a8a83dc50f6a8b7bdd7, type: 3}
+  intervaloGeracao: 3
+  quantidadeMaxima: 100
+  gerarAutomaticamente: 1
+  tagInimigo: Slime
+  distanciaMinima: 10
+  distanciaMaxima: 14
+  tentativasPorGeracao: 10
+  camadaObstaculo:
+    serializedVersion: 2
+    m_Bits: 0
+  camadaJogador:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &818645109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52310,33 +52338,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heart: {fileID: 916064273}
---- !u!114 &1626563667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626563657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 727e80cd42e0bf446aa6f9c4c1a98fe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jogador: {fileID: 916064267}
-  prefabInimigo: {fileID: 1230000000000000000, guid: fc8dd00dfa214a8a83dc50f6a8b7bdd7, type: 3}
-  intervaloGeracao: 5
-  quantidadeMaxima: 100
-  gerarAutomaticamente: 1
-  tagInimigo: Slime
-  distanciaMinima: 10
-  distanciaMaxima: 14
-  tentativasPorGeracao: 10
-  camadaObstaculo:
-    serializedVersion: 2
-    m_Bits: 0
-  camadaJogador:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!4 &1658236259 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5962067207285606833, guid: e32020c439f62434ebf9074737dfda7b, type: 3}
@@ -53280,9 +53281,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4694590377770714986, guid: a5a3f027697c59247b06fec8b778f0e1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1626563662}
-    - targetCorrespondingSourceObject: {fileID: 4694590377770714986, guid: a5a3f027697c59247b06fec8b778f0e1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1626563667}
   m_SourcePrefab: {fileID: 100100000, guid: a5a3f027697c59247b06fec8b778f0e1, type: 3}
 --- !u!1001 &5793156995097354917
 PrefabInstance:
