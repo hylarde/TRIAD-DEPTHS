@@ -70,11 +70,6 @@ public class VIdaInimigo : MonoBehaviour
             knockbackTimer = knockbackDuration;
             isInvulnerable = true;
         }
-
-        Debug.Log($"{name} recebeu {damage} de dano. Vida: {currentHealth}/{maxHealth}");
-
-        if (currentHealth <= 0)
-            Die();
     }
 
     private void Die()
